@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { DevUIModule } from 'ng-devui';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { DevUIModule } from 'ng-devui';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DevUIModule
+    DevUIModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
