@@ -14,6 +14,8 @@ import { SourceType, originSource } from '../mock-data'
 export class AppComponent {
   logo = '../assets/image/logo.png';
   title = 'start-with-devui';
+  tab1acticeID = 'tab1';
+  tab22acticeID = 'tab1';
 // 手风琴
   restrictOneOpen = false;
   menu = [{
