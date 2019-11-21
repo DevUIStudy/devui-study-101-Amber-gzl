@@ -1,0 +1,110 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="top">
+    <div class="topl">
+      <img [src]="logo" width="120px" height="50px"/>
+    </div>
+    <div class="topr">
+      <d-tabs [(activeTab)]="tab22acticeID" [showContent]="false">
+          <d-tab id="tab1" title="首页" tabId="tab1"> </d-tab>
+        </d-tabs>
+    </div>
+  </div>
+  <div class="main">
+    <div class="left">
+      <d-accordion
+        [data]="menu"
+        class="menu"
+        [restrictOneOpen]="restrictOneOpen"
+        (itemClick)="itemClick($event)"
+        (menuToggle)="menuToggle($event)"
+      ></d-accordion>
+    </div>
+    <div class="right">
+      <d-tabs [type]="'tabs'" [(activeTab)]="tab1acticeID">
+          <d-tab id="tab1" title="项目成员" tabId="tab1">
+            <ng-template dTabContent>
+              <div class="rtop">
+                <div class="rtopl">
+                  <section>  
+                    <d-search
+                      [placeholder]="'Please Input keywords'"
+                      [isKeyupSearch]="true"
+                      (searchFn)="onSearch($event)"
+                    ></d-search>
+                  </section>
+                </div>
+              <div class="rtopr">
+                <section> 
+                  <d-button icon="icon-add" bsStyle="primary">
+                    新建
+                  </d-button>
+                </section>
+                </div>
+              </div>
+  
+              <div>
+                <d-data-table
+                #datatable
+                [dataSource]="basicDataSource"
+                [scrollable]="true"
+                [type]="'striped'"
+                >
+                  <d-column field="$index" header="#" [width]="'50px'"></d-column>
+                  <d-column
+                    *ngFor="let colOption of dataTableOptions.columns"
+                    [field]="colOption.field"
+                    [header]="colOption.header"
+                    [fieldType]="colOption.fieldType"
+                    [width]="'150px'"
+                  >
+                  </d-column>
+                </d-data-table>
+  
+                <d-pagination
+                [size]="'sm'"
+                [total]="pager.total"
+                [(pageSize)]="pager.pageSize"
+                [totalItemText]="'总条数'"
+                [(pageIndex)]="pager.pageIndex"
+                [canViewTotal]="true"
+                [canChangePageSize]="true"
+                [lite]="true"
+                [haveConfigMenu]="true"
+                >
+                  <div class="pagination-config-item">
+                    <div class="config-item-title">显示字段</div>
+                    <div class="config-item-words">点击设置</div>
+                  </div>
+                  <div class="pagination-config-item">
+                    <div class="config-item-title">显示方式</div>
+                    <div style="padding-left:10px;margin-top:4px">
+                      <i class="icon-list-view"></i>
+                      <i class="icon-veIcon-briefcase"></i>
+                    </div>
+                  </div>
+                </d-pagination>
+              </div>
+            </ng-template>
+          </d-tab>
+      
+          <d-tab id="tab2" title="待审核" tabId="tab2">
+            <ng-template dTabContent>
+              <p>
+                Netus et malesuada fames ac turpis. Quis auctor elit sed vulputate mi
+                sit amet. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Et
+                ligula ullamcorper malesuada proin libero. Condimentum lacinia quis
+                vel eros donec. Viverra suspendisse potenti nullam ac tortor. Massa
+                eget egestas purus viverra accumsan in nisl. Fames ac turpis egestas
+                maecenas pharetra. Quis varius quam quisque id. Ornare arcu odio ut
+                sem nulla pharetra. In ante metus dictum at tempor commodo
+                ullamcorper. Euismod nisi porta lorem mollis aliquam ut porttitor.
+                Viverra adipiscing at in tellus. Est pellentesque elit ullamcorper
+                dignissim cras. Sed tempus urna et pharetra pharetra. Nullam ac tortor
+                vitae purus faucibus ornare suspendisse.
+              </p>
+            </ng-template>
+          </d-tab>
+        </d-tabs>
+      </div>
+    </div>
+  
